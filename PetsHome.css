@@ -90,7 +90,7 @@ main section, main section p {
 
 
 section {
-    position: static;
+
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -98,7 +98,6 @@ section {
 
 aside {
     margin-top: 0;
-    position: relative;
     align-items: center;
     background-color: #81D4FA; /* Azul Claro */
     padding: 20px;
@@ -171,9 +170,9 @@ input::placeholder,input, select, option{
     }
 
     aside {
-        width: 20vw;
+        width: 30vw;
         padding: 0px;
-        position: static;
+        position: relative;
         height: max-content;
     }
 
