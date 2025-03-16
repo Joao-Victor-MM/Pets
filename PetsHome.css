@@ -20,7 +20,7 @@ body {
 
 header {
     position: relative;
-    background-image: linear-gradient(to bottom, #81D4FA,#81D4FA,#81D4FA,  #FFA726);
+    background-image: linear-gradient(to bottom, #4a8ba8,#4a8ba8,#4a8ba8,  #FFA726);
     padding: 20px;
     text-align: center;
     height: 6vw;
@@ -75,11 +75,11 @@ main {
 }
 
 main p{
-    color: #525252;
+    color: #000000;
 }
 
 main h3{
-    color: #333;
+    color: #000000;
 }
 
 main section, main section p {
@@ -105,14 +105,15 @@ section p{
 aside {
     position: static;
     align-items: center;
-    background-color: #81D4FA; /* Azul Claro */
+    background-color: #4a8ba8; 
     padding: 20px;
     color: #fff;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 15%;
-    height: max-content  
+    height: max-content;
+    border-radius: 20px;
 }
 
 h4{
@@ -136,7 +137,7 @@ article img{
 }
 
 button {
-    background-color: #FFA726; /* Laranja */
+    background-color: #ce7c01; /* Laranja */
     border: none;
     border-radius: 10px;
     color: white;
@@ -149,7 +150,7 @@ button {
     cursor: pointer;
 }
 button:hover {
-    background-color: #FF8A00; /* Laranja Escuro */
+    background-color: #af630b; /* Laranja Escuro */
 }
 
 input::placeholder,input, select, option{
@@ -170,7 +171,7 @@ select{
 
 @media (max-width: 620px) {
     *{
-        font-size: x-small;
+        font-size: small;
     }
     nav ul button {
         font-size: 14px;
