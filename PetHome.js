@@ -68,5 +68,47 @@ const porte = document.createElement('select')
                     ageTxt.innerHTML = "Seu pet tem " + (idade * 6 + 22) + " anos";
                 }
             }
-        }
-    });
+
+            if( idade <= 1){
+                if (porte.value === "pequeno"){
+                    raçãoTxt.innerHTML = 'melhores rações:<br> Royal Canin Mini Puppy <br> N&D Small Puppy <br> Premier Raças Pequenas Filhotes'
+                }
+                if (porte.value === "medio"){
+                    raçãoTxt.innerHTML = "melhores rações:<br> Royal Canin Medium Puppy <br> Premier Medium Puppy <br> Pro Plan Puppy Medium"
+                }
+                if (porte.value === "grande"){
+                    raçãoTxt.innerHTML = "melhores rações:<br> Royal Canin Maxi Puppy <br> N&D Large Puppy <br> Premier Raças Grandes Filhotes"
+                }
+            }
+
+            else if( idade <= 7){
+                if (porte.value === "pequeno"){
+                    raçãoTxt.innerHTML = 'melhores rações:<br> Royal Canin Mini Adult <br> N&D Small Breed Adult <br> Premier Raças Pequenas Adulto'
+                }
+                if (porte.value === "medio"){
+                    raçãoTxt.innerHTML = "melhores rações:<br> Royal Canin Medium Adult <br> Premier Medium Breed Adult <br> Pro Plan Medium Adult"
+                }
+                if (porte.value === "grande"){
+                    raçãoTxt.innerHTML = "melhores rações:<br> Royal Canin Maxi Adult <br> N&D Large Breed Adult <br> Premier Raças Grandes Adulto"
+                }
+            }
+
+            else if( idade > 7){
+                if (porte.value === "pequeno"){
+                    raçãoTxt.innerHTML = 'melhores rações:<br> Royal Canin Mini Aging 8+ <br> Premier Medium Breed Senior <br> Premier Raças Pequenas Sênior'
+                }
+                if (porte.value === "medio"){
+                    raçãoTxt.innerHTML = "melhores rações:<br> Royal Canin Medium Aging 8+  <br> Premier Medium Breed Senior <br> Pro Plan Medium Senior"
+                }
+                if (porte.value === "grande"){
+                    raçãoTxt.innerHTML = "melhores rações:<br> Royal Canin Maxi Aging 8+ <br> N&D Large Breed Senior <br> Premier Raças Grandes Sênior"
+                }
+            }
+
+            
+
+        
+    }else if (Tipo1.value === "gato") {
+
+    }
+});

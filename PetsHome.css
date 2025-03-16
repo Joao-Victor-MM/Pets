@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     color: aliceblue;
+    z-index: 0;
 }
 
 body {
@@ -31,10 +32,9 @@ header h1 {
 }
 
 nav{
-    margin-bottom: 0;
     position: sticky;
-    top: 0;
-
+    top: 0px;
+    z-index: 1000;
 }
 
 nav ul {
@@ -66,6 +66,7 @@ main {
     position: static;
     padding: 20px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 85%;
     height: 81.5vh;
@@ -94,6 +95,7 @@ section {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 section p{
@@ -101,7 +103,7 @@ section p{
 }
 
 aside {
-    margin-top: 0;
+    position: static;
     align-items: center;
     background-color: #81D4FA; /* Azul Claro */
     padding: 20px;
@@ -110,7 +112,7 @@ aside {
     justify-content: center;
     flex-direction: column;
     width: 15%;
-    height: 82vh    
+    height: max-content  
 }
 
 h4{
@@ -164,11 +166,23 @@ select{
     cursor: pointer;
 }
 
+
+
 @media (max-width: 620px) {
+    *{
+        font-size: x-small;
+    }
     nav ul button {
         font-size: 14px;
         padding: 8px 16px;
     }
+
+    body{
+        overflow-x: hidden;
+    }
+
+    
+ 
     header{
         height: 20vw;
     }
@@ -178,10 +192,32 @@ select{
     }
 
     aside {
-        width: 30vw;
-        padding: 0px;
-        position: relative;
+        flex-direction: row;
         height: max-content;
+        width: 100vw;
+    }
+    article{
+        position: relative;
+        width: 100vw;
+        height: max-content;
+        top: 40px;
+        right: 10px;
+    }
+
+    aside h3{
+        display: none;
+    }
+
+    aside h4, aside p{
+        display: none;
+    }
+
+    aside img{
+        display: grid;
+        align-self: center;
+        width: 65px;
+        height: 100px;
+        margin-right: 5px;
     }
 
     button {
@@ -194,7 +230,7 @@ select{
         margin: 5px;
     }
     .content{
-        flex-direction: row;
+        flex-direction: column-reverse;
     }
 }
 
