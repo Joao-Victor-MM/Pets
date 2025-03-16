@@ -25,19 +25,21 @@
             <p>Aqui na Pet´s Home você fica por dentro das melhores notícias do mundo animal, além de poder achar os melhores Petshops da sua região, aqui, você fica por dentro de tudo que seu pet precisa.</p>
 
     
-            <section class="Age">
+            <section class="Age" id="section1">
              <h4>Idade do seu pet</h4>
                 <p>Saiba quantos anos seu pet tem, e qual o melhor tipo de ração para ele!</p>
 
-                <input type="number" placeholder="Idade do Pet">
+                <input type="number" placeholder="Idade do Pet" id="idade">
                 <label for="tipo">Selecione o seu pet:</label>
                 <select id="tipo">
                     <option value="cachorro" selected>Cachorro</option>
-                    <option value="gato">Gato</option>
+                    <option value="gato" >Gato</option>
                     <option value="hamster">Hamster</option>
                 <option value="coelho">Coelho</option>
                 </select>
-                <button>Transformar e pesquisar</button>
+
+                <button id="raçãoButton">Transformar e pesquisar</button>
+
                 <p id="calcAge"></p>
                 <p id="ração"></p>
             </section>
@@ -46,7 +48,7 @@
                 <h4>Peso ideal do seu pet</h4>
                 <p>Veja se seu pet está no peso ideal para sua idade e raça.</p>
             
-                <input type="number" placeholder="Idade do Pet">
+                <input type="number" placeholder="Idade do Pet" id="idade2">
                 <label for="tipo2">Selecione o seu pet:</label>
                 <select id="tipo2">
                     <option value="cachorro" selected>Cachorro</option>
@@ -94,6 +96,6 @@
         </aside>
     </div>
 
-
+<script src="PetHome.js"></script>
 </body>
 </html>

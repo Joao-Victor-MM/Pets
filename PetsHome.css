@@ -96,6 +96,10 @@ section {
     flex-direction: column;
 }
 
+section p{
+    text-align: center;
+}
+
 aside {
     margin-top: 0;
     align-items: center;
@@ -154,6 +158,10 @@ input::placeholder,input, select, option{
     border-color: aliceblue;
     margin: 10px;
     
+}
+
+select{
+    cursor: pointer;
 }
 
 @media (max-width: 620px) {
