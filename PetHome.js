@@ -5,8 +5,9 @@ let raçãoTxt = document.getElementById("ração")
 let ageTxt = document.getElementById("calcAge")
 let sectionAge = document.getElementById('section1')
 
+
 const meses = document.createElement('p')
-meses.textContent = "digite a idade do hamster em meses"
+meses.textContent = "digite a idade do pet em meses"
 
 const porteLabel = document.createElement('label')
 const porte = document.createElement('select')
@@ -16,6 +17,18 @@ const porte = document.createElement('select')
         <option value="medio" selected>Médio</option>
         <option value="grande">Grande</option>
     `
+
+    raçãoTxt.style.color =" rgb(255, 255, 255)"
+    ageTxt.style.color = "rgb(255, 255, 255)"
+
+    raçãoTxt.style.display = "none"
+    ageTxt.style.display = "none"
+    
+    ageTxt.style.borderRadius = "0px"
+    raçãoTxt.style.borderRadius = "0px"
+
+    ageTxt.style.backgroundColor = "rgb(10, 122, 6)"
+    raçãoTxt.style.backgroundColor = "rgb(10, 122, 6)"
 
 
     function updatePorteElements() {
@@ -32,7 +45,7 @@ const porte = document.createElement('select')
                 sectionAge.removeChild(porte);
             }
         }
-            if (Tipo1.value === "hamster"){
+            if (Tipo1.value === "hamster" || Tipo1.value === "coelho"){
                 if (!sectionAge.contains(meses)) {
                     sectionAge.insertBefore(meses, Idade1);
                 
@@ -50,11 +63,22 @@ const porte = document.createElement('select')
 
     Tipo1.addEventListener('change', updatePorteElements);
 
-
+    
 
     
     raçãoButton.addEventListener('click', function () {
-        let idade = parseInt(Idade1.value); 
+        let idade = parseInt(Idade1.value);
+
+        if (isNaN(idade) || idade < 0) {
+            ageTxt.style.display = "block";
+            ageTxt.innerHTML = "Por favor, insira uma idade válida.";
+            raçãoTxt.style.display = "none";
+            return;
+        }
+        
+            raçãoTxt.style.display = "block"
+            ageTxt.style.display = "block"
+
         if (Tipo1.value === "cachorro") {
             if (porte.value === "pequeno") {
                 if (idade <= 1) {
@@ -88,37 +112,37 @@ const porte = document.createElement('select')
 
             if( idade <= 1){
                 if (porte.value === "pequeno"){
-                    raçãoTxt.innerHTML = '<b>Melhores rações</b>:<br> Royal Canin Mini Puppy <br> N&D Small Puppy <br> Premier Raças Pequenas Filhotes'
+                    raçãoTxt.innerHTML = '<b>Melhores rações</b>:<br> Royal Canin Mini Puppy; <br> N&D Small Puppy; <br> Premier Raças Pequenas Filhotes'
                 }
                 if (porte.value === "medio"){
-                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Medium Puppy <br> Premier Medium Puppy <br> Pro Plan Puppy Medium"
+                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Medium Puppy; <br> Premier Medium Puppy; <br> Pro Plan Puppy Medium"
                 }
                 if (porte.value === "grande"){
-                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Maxi Puppy <br> N&D Large Puppy <br> Premier Raças Grandes Filhotes"
+                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Maxi Puppy; <br> N&D Large Puppy; <br> Premier Raças Grandes Filhotes"
                 }
             }
 
             else if( idade <= 7){
                 if (porte.value === "pequeno"){
-                    raçãoTxt.innerHTML = '<b>Melhores rações</b>:<br> Royal Canin Mini Adult <br> N&D Small Breed Adult <br> Premier Raças Pequenas Adulto'
+                    raçãoTxt.innerHTML = '<b>Melhores rações</b>:<br> Royal Canin Mini Adult; <br> N&D Small Breed Adult; <br> Premier Raças Pequenas Adulto'
                 }
                 if (porte.value === "medio"){
-                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Medium Adult <br> Premier Medium Breed Adult <br> Pro Plan Medium Adult"
+                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Medium Adult; <br> Premier Medium Breed Adult; <br> Pro Plan Medium Adult"
                 }
                 if (porte.value === "grande"){
-                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Maxi Adult <br> N&D Large Breed Adult <br> Premier Raças Grandes Adulto"
+                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Maxi Adult; <br> N&D Large Breed Adult; <br> Premier Raças Grandes Adulto"
                 }
             }
 
             else if( idade > 7){
                 if (porte.value === "pequeno"){
-                    raçãoTxt.innerHTML = '<b>Melhores rações</b>:<br> Royal Canin Mini Aging 8+ <br> Premier Medium Breed Senior <br> Premier Raças Pequenas Sênior'
+                    raçãoTxt.innerHTML = '<b>Melhores rações</b>:<br> Royal Canin Mini Aging 8+; <br> Premier Medium Breed Senior; <br> Premier Raças Pequenas Sênior'
                 }
                 if (porte.value === "medio"){
-                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Medium Aging 8+  <br> Premier Medium Breed Senior <br> Pro Plan Medium Senior"
+                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Medium Aging 8+;  <br> Premier Medium Breed Senior; <br> Pro Plan Medium Senior"
                 }
                 if (porte.value === "grande"){
-                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Maxi Aging 8+ <br> N&D Large Breed Senior <br> Premier Raças Grandes Sênior"
+                    raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Maxi Aging 8+; <br> N&D Large Breed Senior; <br> Premier Raças Grandes Sênior"
                 }
             }
 
@@ -128,7 +152,7 @@ const porte = document.createElement('select')
     }else if (Tipo1.value === "gato") {
         if (idade <= 1) {
             ageTxt.innerHTML = "Seu pet tem 15 anos";
-            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Feline Health Nutrition Kitten <br> Hill's Science Diet Kitten <br> Whiskas Kitten"
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Feline Health Nutrition Kitten; <br> Hill's Science Diet Kitten; <br> Whiskas Kitten"
         } else if (idade === 2){
             ageTxt.innerHTML = "Seu pet tem 24 anos"
         }else if (idade > 2){
@@ -136,11 +160,11 @@ const porte = document.createElement('select')
         }
 
         if(idade > 1 && idade <= 3){
-            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Feline Health Nutrition Adult <br> Hill's Science Diet Adult <br>Farmina N&D Prime Adult"
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Feline Health Nutrition Adult; <br> Hill's Science Diet Adult; <br>Farmina N&D Prime Adult"
         }else if (idade > 3 && idade < 7){
-            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Indoor Adult <br> Hill's Ideal Balance Adultr <br>Whiskas Adulto"
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Indoor Adult; <br> Hill's Ideal Balance Adult; <br>Whiskas Adulto"
         }else if (idade > 7){
-            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Feline Health Nutrition Senior <br> Hill's Science Diet Senior 7+<br>Orijen Senior"
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Royal Canin Feline Health Nutrition Senior; <br> Hill's Science Diet Senior 7+;<br>Orijen Senior"
         }
 
         
@@ -153,14 +177,24 @@ const porte = document.createElement('select')
             ageTxt.innerHTML = "Seu pet tem " + (30 + (idade -12) * 2.5) + ' anos'
         }
 
-        if (idade < 2){
-            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Versele-Laga Cavia Complete <br>Oxbow Essentials Hamster & Gerbil <br>Higgins Sunburst Hamster Food"
+        if (idade <= 2){
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Versele-Laga Cavia Complete; <br>Oxbow Essentials Hamster & Gerbil ;<br>Higgins Sunburst Hamster Food"
         }else if (idade <= 12 ){
-            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Higgins Sunburst Hamster Food<br>Versele-Laga Hamster Nature <br>Kaytee Forti-Diet Pro Health Hamster"
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Higgins Sunburst Hamster Food;<br>Versele-Laga Hamster Nature ;<br>Kaytee Forti-Diet Pro Health Hamster"
         } else if (idade <= 24){
-            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Versele-Laga Hamster Naturer <br>Higgins VitaSmart Hamster <br>Oxbow Essentials Hamster & Gerbil"
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Versele-Laga Hamster Naturer ;<br>Higgins VitaSmart Hamster ;<br>Oxbow Essentials Hamster & Gerbil"
         } else if (idade > 24){
-            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Versele-Laga Hamster Crispy Pellets <br>Oxbow Essentials Hamster & Gerbil Senior <br>Kaytee Forti-Diet Pro Health Senior"
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Versele-Laga Hamster Crispy Pellets ;<br>Oxbow Essentials Hamster & Gerbil Senior ;<br>Kaytee Forti-Diet Pro Health Senior"
+        }
+    }else if (Tipo1.value === "coelho"){
+        if(idade === 1){
+            ageTxt.innerHTML = "Seu pet 6 anos"
+        }else if (idade <=6){
+            ageTxt.innerHTML = "Seu pet tem " + ((idade - 1) *2 +6) + " anos"
+        }else if (idade <=12){
+            ageTxt.innerHTML = "Seu pet tem " + ((idade - 6) *1 + 15) + " anos"
+        }else if (idade > 12){
+            ageTxt.innerHTML = "Seu pet tem " + ((idade - 12) * 0.5 + 21) + " anos"
         }
     }
 
@@ -168,4 +202,3 @@ const porte = document.createElement('select')
         ageTxt.innerHTML = "Idade inválida"
     }
 }); 
-

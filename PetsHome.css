@@ -76,6 +76,7 @@ main {
 
 main p{
     color: #000000;
+    margin-bottom: 10px;
 }
 
 main h3{
@@ -113,7 +114,8 @@ aside {
     flex-direction: column;
     width: 15%;
     height: max-content;
-    border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 h4{
@@ -148,6 +150,7 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    color: #000000;
 }
 button:hover {
     background-color: #af630b; /* Laranja Escuro */
@@ -160,11 +163,20 @@ input::placeholder,input, select, option{
     padding: 3px;
     border-color: aliceblue;
     margin: 10px;
+    color: #000000;
     
+}
+
+input{
+    text-align: center;
 }
 
 select{
     cursor: pointer;
+}
+
+.calcAge, .ração{
+    color: #1a522f ;
 }
 
 
