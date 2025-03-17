@@ -196,6 +196,14 @@ const porte = document.createElement('select')
         }else if (idade > 12){
             ageTxt.innerHTML = "Seu pet tem " + ((idade - 12) * 0.5 + 21) + " anos"
         }
+
+        if (idade <= 6){
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Nutrópica Filhotes ;<br>Supra Coelho Filhote ;<br>Megazoo Coelhos e Roedores Filhotes"
+        }else if( idade <= 60){
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Nutrópica Coelhos Adultos ;<br>Megazoo Coelhos Adultos ;<br>Supra Coelho Adulto"
+        }else if(idade > 60){
+            raçãoTxt.innerHTML = "<b>Melhores rações</b>:<br> Nutrópica Coelhos Sênior ;<br>Megazoo Coelhos e Roedores Adultos e Idosos ;<br>Supreme Science Selective Senior Rabbit"
+        }
     }
 
     if (idade < 0){
