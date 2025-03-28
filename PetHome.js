@@ -4,6 +4,13 @@ let raçãoButton = document.getElementById("raçãoButton")
 let raçãoTxt = document.getElementById("ração")
 let ageTxt = document.getElementById("calcAge")
 let sectionAge = document.getElementById('section1')
+let sectionWeight = document.querySelector('.weight')
+
+let Idade2 = document.getElementById('idade2')
+let Tipo2 = document.querySelector('#tipo2')
+let peso = document.getElementById('peso')
+let pesoIdeal = document.getElementById('pesoIdeal')
+let pesoBtn = document.getElementById("pesoBtn")
 
 
 const meses = document.createElement('p')
@@ -17,6 +24,20 @@ const porte = document.createElement('select')
         <option value="medio" selected>Médio</option>
         <option value="grande">Grande</option>
     `
+
+    const porteLabel2 = document.createElement('label')
+    const porte2 = document.createElement('select')
+    porteLabel2.textContent = 'Porte: '
+    porte2.innerHTML = `
+        <option value="pequeno">Pequeno</option>
+        <option value="medio" selected>Médio</option>
+        <option value="grande">Grande</option>
+        `
+
+
+    const raça = document.createElement('select')
+    const raçaLabel = document.createElement('label')
+    raçaLabel.textContent = 'Raça: '
 
     raçãoTxt.style.color =" rgb(255, 255, 255)"
     ageTxt.style.color = "rgb(255, 255, 255)"
@@ -63,7 +84,36 @@ const porte = document.createElement('select')
 
     Tipo1.addEventListener('change', updatePorteElements);
 
-    
+    function escolherRaça() {
+        if (Tipo2 === 'cachorro') {
+            raça.innerHTML = `
+            <option value="labrador">Labrador Retriever</option>
+            <option value="bulldog">Bulldog</option>
+            <option value="poodle">Poodle</option>
+            <option value="beagle">Beagle</option>
+            <option value="rottweiler">Rottweiler</option>
+            <option value="pastor-alemao">Pastor Alemão</option>
+            <option value="golden-retriever">Golden Retriever</option>
+            <option value="yorkshire">Yorkshire Terrier</option>
+            <option value="pinscher">Pinscher</option>
+            <option value="shih-tzu">Shih Tzu</option>
+            <option value="chihuahua">Chihuahua</option>
+            <option value="boxer">Boxer</option>
+            <option value="husky-siberiano">Husky Siberiano</option>
+            <option value="border-collie">Border Collie</option>
+            <option value="maltes">Maltês</option>
+        `;
+        if(!sectionWeight.contains(raça) && !sectionWeight.contains(raçaLabel)){
+            sectionWeight.insertBefore(raçaLabel, peso);
+            sectionWeight.insertBefore(raça, peso);
+        }
+
+    }
+        
+    }
+
+    escolherRaça();
+    Tipo2.addEventListener('change', escolherRaça);
 
     
     raçãoButton.addEventListener('click', function () {
@@ -210,3 +260,8 @@ const porte = document.createElement('select')
         ageTxt.innerHTML = "Idade inválida"
     }
 }); 
+
+
+    function calcularPeso(){
+        
+    }
